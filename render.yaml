@@ -1,9 +1,8 @@
 services:
   - type: web
-    name: diabetes-api
-    env: python
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: gunicorn app:app
-    workingDir: backend
+    name: diabetes-frontend
+    env: static
+    staticPublishPath: frontend/build
+    buildCommand: cd frontend && npm install && npm run build
     region: oregon
     plan: free
