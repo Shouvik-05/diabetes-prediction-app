@@ -28,7 +28,7 @@ function Home() {
         const inputFeatures = Object.values(formData).map(Number);
 
         try {
-            const response = await axios.post("http://127.0.0.1:5000/predict", {
+            await axios.post("https://diabetes-api-tdru.onrender.com/predict", {
                 features: inputFeatures,
             });
             setPrediction(response.data.prediction);
