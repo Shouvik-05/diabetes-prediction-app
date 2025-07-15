@@ -12,6 +12,7 @@ A fullstack machine learning web application built using **React (frontend)** an
 
 ## 📁 Project Structure
 
+```pgsql
 diabetes-prediction-app/
 ├── backend/
 │ ├── app.py
@@ -33,7 +34,7 @@ diabetes-prediction-app/
 │ └── package.json
 ├── README.md
 └── .gitignore
-
+```
 
 
 ---
@@ -76,7 +77,40 @@ npm install
 npm start
 ```
 # 🧪 Sample Input (For API Testing)
+| Pregnancies | Glucose | BloodPressure  | SkinThickness  | Insulin | BMI | DiabetesPedigreeFunction  | Age | Prediction   |
+|-------------|---------|----------------|----------------|---------|-----|---------------------------|-----|--------------|
+| 2           | 85      | 60             | 20             | 90      | 23.5| 0.3                       | 29  | Not Diabetic |
+| 6           | 148     | 72             | 35             | 0       | 33.6| 0.627                     | 50  | Diabetic     |
 
+
+## You can test this by sending the following JSON to the backend API (/predict):
+
+```json
+{
+  "features": [6, 148, 72, 35, 0, 33.6, 0.627, 50]
+}
+```
+## Response:
+
+```json
+{
+  "prediction": "Diabetic"
+}
+```
+## And for a non-diabetic case:
+
+```json
+{
+  "features": [1, 85, 66, 29, 0, 26.6, 0.351, 31]
+}
+```
+## Response:
+
+```json
+{
+  "prediction": "Not Diabetic"
+}
+```
 
 # 🌱 Future Improvements
 ✅ Add form validation and loader animations
@@ -89,6 +123,6 @@ npm start
 
 ⏳ Add user authentication
 
-👨‍💻 Author
+#👨‍💻 Author
 Shouvik Bhattacharjee
-📬 GitHub
+
