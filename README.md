@@ -123,6 +123,6 @@ npm start
 
 ⏳ Add user authentication
 
-#👨‍💻 Author
+# 👨‍💻 Author
 Shouvik Bhattacharjee
 
