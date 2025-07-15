@@ -28,10 +28,10 @@ function Home() {
         const inputFeatures = Object.values(formData).map(Number);
 
         try {
-            await axios.post("https://diabetes-api-tdru.onrender.com/predict", {
-                features: inputFeatures,
-            });
-            setPrediction(response.data.prediction);
+            const response = await axios.post("https://diabetes-api-tdru.onrender.com/predict", {
+            features: inputFeatures,
+        });
+        setPrediction(response.data.prediction);
         } catch (error) {
             console.error("Prediction error:", error);
             setPrediction("Something went wrong.");
